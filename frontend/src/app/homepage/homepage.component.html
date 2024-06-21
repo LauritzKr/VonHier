@@ -1,0 +1,30 @@
+<app-navbar (search)="onSearch($event)"></app-navbar>
+<div class="offers-container">
+  @for (offer of offers; track offer) {
+  <a [routerLink]="[offer.id]" class="offer-link">
+    <mat-card class="offer-card">
+      <div class="card-content">
+        <img [src]="offer.image" alt="Offer" class="offer-image" />
+        <div class="text-content">
+          <mat-card-title>{{ offer.title }}</mat-card-title>
+          <!-- <mat-card-subtitle>{{
+            offer.userId + ": " + offer.type
+          }}</mat-card-subtitle> -->
+          <!-- <mat-card-subtitle>{{
+            offer.userId === '4f2112b8-de92-4a54-bb3a-3e9c3e1bc221' ? 'Testuser' : 'Not Matched String' + ": " + offer.type
+          }}</mat-card-subtitle> -->
+          <mat-card-subtitle>{{
+            offer.userId === '4f2112b8-de92-4a54-bb3a-3e9c3e1bc221'
+              ? 'Sigfried: ' + offer.type
+              : 'Testuser: ' + offer.type
+          }}</mat-card-subtitle>
+          <!-- 4f2112b8-de92-4a54-bb3a-3e9c3e1bc221 -->
+          <mat-card-content class="offer-desc">
+            <p>{{ offer.description }}</p>
+          </mat-card-content>
+        </div>
+      </div>
+    </mat-card>
+  </a>
+  }
+</div>

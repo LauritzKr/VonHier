@@ -1,0 +1,34 @@
+<mat-toolbar>
+  <!-- Logo and title on the left -->
+  <div class="navbar-section logo-title" (click)="onLogoTitleClick()">
+    <img src="../../assets/logo.png" width="40" alt="logo" />
+    <span class="navbar-title">Von Hier</span>
+  </div>
+
+  <!-- Search bar in the middle -->
+  @if (isOffersRouteActive()) {
+  <div class="navbar-section search-bar">
+    <mat-form-field>
+      <mat-label>Suche nach Angeboten</mat-label>
+      <input
+        matInput
+        placeholder="Hier tippen..."
+        [(ngModel)]="searchQuery"
+        (input)="onSearchChange()"
+      />
+    </mat-form-field>
+  </div>
+  }
+
+  <!-- Profile button on the right -->
+  <div class="navbar-section profile-menu">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <img src="../../assets/profile.png" class="profile-img" alt="profile" />
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="onCreateClick()">Neue Anzeige</button>
+      <button mat-menu-item (click)="onProfileClick()">Profil</button>
+      <button mat-menu-item (click)="onLogoutClick()">Logout</button>
+    </mat-menu>
+  </div>
+</mat-toolbar>

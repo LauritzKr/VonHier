@@ -1,0 +1,111 @@
+<div class="login-register-container">
+  @if (showLoginForm) {
+  <!-- LOGIN FORM -->
+  <h2>Login</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <!-- USERNAME -->
+    <mat-form-field appearance="outline">
+      <mat-label>Username</mat-label>
+      <input
+        matInput
+        formControlName="username"
+        required
+        placeholder="Username"
+      />
+    </mat-form-field>
+
+    <!-- PASSWORD -->
+    <mat-form-field appearance="outline">
+      <mat-label>Passwort</mat-label>
+      <input
+        matInput
+        type="password"
+        formControlName="password"
+        required
+        placeholder="Passwort"
+      />
+    </mat-form-field>
+
+    <!-- LOGIN BUTTON -->
+    <button mat-raised-button color="primary" type="submit">Login</button>
+
+    <!-- SWITCH TO REGISTER -->
+    <button mat-raised-button color="secondary" (click)="toggleForm()">
+      Registrieren
+    </button>
+  </form>
+
+  } @else {
+  <!-- REGISTER FORM -->
+  <h2>Register</h2>
+  <form class="form-grid" [formGroup]="registerForm" (ngSubmit)="onRegister()">
+    <!-- USERNAME -->
+    <mat-form-field appearance="outline">
+      <mat-label>Username</mat-label>
+      <input matInput formControlName="username" required />
+    </mat-form-field>
+
+    <!-- PASSWORD -->
+    <mat-form-field appearance="outline">
+      <mat-label>Passwort</mat-label>
+      <input matInput type="password" formControlName="password" required />
+    </mat-form-field>
+
+    <!-- FIRST NAME -->
+    <mat-form-field appearance="outline">
+      <mat-label>Vorname</mat-label>
+      <input matInput formControlName="firstName" required />
+    </mat-form-field>
+
+    <!-- LAST NAME -->
+    <mat-form-field appearance="outline">
+      <mat-label>Nachname</mat-label>
+      <input matInput formControlName="lastName" required />
+    </mat-form-field>
+
+    <!-- EMAIL -->
+    <mat-form-field appearance="outline">
+      <mat-label>Email Adresse</mat-label>
+      <input matInput type="email" formControlName="email" required />
+    </mat-form-field>
+
+    <!-- TELNR -->
+    <mat-form-field appearance="outline">
+      <mat-label>Telefon Nr.</mat-label>
+      <input matInput formControlName="telNr" required />
+    </mat-form-field>
+
+    <!-- STREET -->
+    <mat-form-field appearance="outline">
+      <mat-label>Straße</mat-label>
+      <input matInput formControlName="street" required />
+    </mat-form-field>
+
+    <!-- HOUSE NR -->
+    <mat-form-field appearance="outline">
+      <mat-label>Hausnr.</mat-label>
+      <input matInput formControlName="housenr" required />
+    </mat-form-field>
+
+    <!-- POSTAL CODE -->
+    <mat-form-field appearance="outline">
+      <mat-label>Postleitzahl</mat-label>
+      <input matInput type="number" formControlName="postalcode" required />
+    </mat-form-field>
+
+    <!-- CITY -->
+    <mat-form-field appearance="outline">
+      <mat-label>Stadt</mat-label>
+      <input matInput formControlName="city" required />
+    </mat-form-field>
+
+    <!-- REGISTER BUTTON -->
+    <button mat-raised-button color="primary" type="submit">Register</button>
+  </form>
+
+  <!-- SWITCH TO LOGIN -->
+  <button mat-raised-button color="secondary" (click)="toggleForm()">
+    Zurück zum Login
+  </button>
+  }
+</div>

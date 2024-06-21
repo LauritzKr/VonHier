@@ -1,0 +1,58 @@
+\documentclass[12pt,a4paper,fancyheader]{scrartcl}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{amsfonts}
+
+\newcommand\svthema{VonHier --- A Local Marketplace}
+\newcommand\svperson{Johannes Jany, Tim Hofmann, Lauritz Kremzow}
+\newcommand\svdatum{\today}
+\newcommand\lvname{Modul: Applied Project}
+\newcommand\lvtyp{SS 2024}
+\newcommand\lvinst{FOM Hochschule für Oekonomie \& Management}
+
+\newcommand{\blindtext}{\textit{
+  Abstract....
+}}
+
+\hypersetup{
+  pdftitle={Seminararbeit zum Thema: \svthema} 
+  pdfauthor={\svperson}
+}	
+	
+\begin{document}
+
+\title{ \huge\textbf{\svthema} }
+\author{ \textsl{\svperson} \\ \svdatum }
+\date{ \normalsize \centering \includegraphics[width=0.3\textwidth]{FOM}\\\textsc{"`\lvname"'} \\ {\lvtyp} · {\lvinst} }
+
+\maketitle
+\thispagestyle{empty}
+\pagenumbering{Roman}
+
+\begin{abstract}
+\blindtext
+\end{abstract}
+
+\cleardoublepage
+\tableofcontents
+
+\cleardoublepage
+\listoffigures
+
+\cleardoublepage
+\pagenumbering{arabic}
+\setcounter{page}{4}
+
+\input{sections/introduction.tex}
+
+\cleardoublepage
+\bibliographystyle{IEEEtran}
+\bibliography{literature}
+
+\end{document}

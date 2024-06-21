@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+@if (offer) {
+<mat-card class="offer-card">
+  <div class="card-layout">
+    <img mat-card-image [src]="imagePath" alt="Offer" class="offer-image" />
+    <div class="card-info">
+      <mat-card-title>{{ offer.type }}: {{ offer.title }}</mat-card-title>
+      <mat-card-subtitle
+        >Benutzer kontaktieren: {{offer.userId === '4f2112b8-de92-4a54-bb3a-3e9c3e1bc221' ? 'Sigfried(siegfried.mueller@vonhier.de)' : 'Testuser(test.user@vonhier.de)'}}</mat-card-subtitle
+      >
+    </div>
+  </div>
+  <mat-card-content>
+    <mat-card-title>Beschreibung:</mat-card-title>
+    <p>{{ offer.description }}</p>
+  </mat-card-content>
+</mat-card>
+} @else {
+<mat-card>
+  <mat-card-content>No offer found!</mat-card-content>
+</mat-card>
+}
